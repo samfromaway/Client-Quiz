@@ -1,0 +1,22 @@
+:root {
+  --main-border-radius: 5px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 13pt;
+  min-width: 320px;
+}
+
+body {
+  background: var(--space-blue);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+}

@@ -1,0 +1,30 @@
+.button {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: var(--main-blue);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 0.5em;
+  box-shadow: none;
+  border: none;
+  transition-duration: 0.4s;
+  outline: none;
+  margin: 1rem;
+  border: rgba(255, 255, 255, 0.144);
+  border-style: solid;
+  border-width: 2px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--main-blue-light);
+  color: black;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: rgb(110, 139, 231);
+}
