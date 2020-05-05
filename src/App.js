@@ -1,8 +1,7 @@
 import React from 'react';
 import Navbar from './assets/scripts/components/Navbar';
 import QuizQuestion from './assets/scripts/components/QuizQuestion';
-import Users from './assets/scripts/components/Users';
-import logo from './images/logo.png';
+import ProgressBar from './assets/scripts/components/ProgressBar';
 import design from './images/design01.png';
 import fluidtechnik from './images/fluidtechnik01.png';
 import howToExpat from './images/how-to-expat01.png';
@@ -59,6 +58,7 @@ function App() {
     <div className='App'>
       <header>
         <Navbar />
+        <ProgressBar nrOfQuizes={questions.length} />
         <h2 className='welcome-title'>Thanks for working with us</h2>
         <p className='welcome-desc'>
           Please fill out the quiz so we know how to desing your website or

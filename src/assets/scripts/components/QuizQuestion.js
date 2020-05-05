@@ -4,10 +4,10 @@ class QuizQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Checkbox1: false,
-      Checkbox2: false,
-      Checkbox3: false,
-      Checkbox4: false,
+      Checkbox1: 'Not answered',
+      Checkbox2: 'Not answered',
+      Checkbox3: 'Not answered',
+      Checkbox4: 'Not answered',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -31,8 +31,15 @@ class QuizQuestion extends Component {
         this.setState({ Checkbox3: `${name} is ${checked}` });
         break;
       case 'Checkbox4':
-        this.setState({ Checkbox3: `${name} is ${checked}` });
+        this.setState({ Checkbox4: `${name} is ${checked}` });
         break;
+      default:
+        this.setState({
+          Checkbox1: 'error',
+          Checkbox2: 'error',
+          Checkbox3: 'error',
+          Checkbox4: 'error',
+        });
     }
   }
 
