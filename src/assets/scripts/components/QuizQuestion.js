@@ -50,7 +50,7 @@ const QuizQuestion = ({
             <input
               className='checkbox'
               id={id1}
-              name={desc1}
+              name={id1}
               type='checkbox'
               onChange={updateCheckbox1}
             />
@@ -63,7 +63,7 @@ const QuizQuestion = ({
             <input
               className='checkbox'
               id={id2}
-              name={desc2}
+              name={id2}
               type='checkbox'
               onChange={updateCheckbox1}
             />
@@ -75,7 +75,7 @@ const QuizQuestion = ({
             <span>{desc3}</span>
             <input
               className='checkbox'
-              name={desc3}
+              name={id3}
               id={id3}
               type='checkbox'
               onChange={updateCheckbox1}
@@ -88,7 +88,7 @@ const QuizQuestion = ({
             <span>{desc4}</span>
             <input
               className='checkbox'
-              name={desc4}
+              name={id4}
               id={id4}
               type='checkbox'
               onChange={updateCheckbox1}
