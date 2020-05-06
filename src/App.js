@@ -1,14 +1,19 @@
 import React from 'react';
 import Navbar from './assets/scripts/components/Navbar';
-import QuizQuestion from './assets/scripts/components/QuizQuestion';
 import ProgressBar from './assets/scripts/components/ProgressBar';
-import { QuizProvider } from './assets/scripts/context/QuizContext';
+import QuizQuestion from './assets/scripts/components/QuizQuestion';
+import QuizContact from './assets/scripts/components/QuizContact';
+import {
+  QuizProvider,
+  QuizContext,
+} from './assets/scripts/context/QuizContext';
 import design from './images/design01.png';
 import fluidtechnik from './images/fluidtechnik01.png';
 import howToExpat from './images/how-to-expat01.png';
 import howToMedellin from './images/howtomedellin01.png';
 import './App.css';
 
+//when adding questions, edits have to be done in ProgressBar.js
 const questions = [
   {
     title: 'Which color do you like best?',
@@ -59,24 +64,27 @@ function App() {
           Please fill out the quiz so we know how to desing your website or
           grahics
         </p>
-        {questions.map((questions) => (
-          <QuizQuestion
-            key={questions._id}
-            id1={questions.options.id1}
-            id2={questions.options.id2}
-            id3={questions.options.id3}
-            id4={questions.options.id4}
-            title={questions.title}
-            img1={questions.options.img1}
-            img2={questions.options.img2}
-            img3={questions.options.img3}
-            img4={questions.options.img4}
-            desc1={questions.options.desc1}
-            desc2={questions.options.desc2}
-            desc3={questions.options.desc3}
-            desc4={questions.options.desc4}
-          />
-        ))}
+        <form className='quiz-form' action=''>
+          {questions.map((questions) => (
+            <QuizQuestion
+              key={questions._id}
+              id1={questions.options.id1}
+              id2={questions.options.id2}
+              id3={questions.options.id3}
+              id4={questions.options.id4}
+              title={questions.title}
+              img1={questions.options.img1}
+              img2={questions.options.img2}
+              img3={questions.options.img3}
+              img4={questions.options.img4}
+              desc1={questions.options.desc1}
+              desc2={questions.options.desc2}
+              desc3={questions.options.desc3}
+              desc4={questions.options.desc4}
+            />
+          ))}
+          <QuizContact />
+        </form>
       </div>
     </QuizProvider>
   );

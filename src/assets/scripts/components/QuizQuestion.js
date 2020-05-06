@@ -42,7 +42,7 @@ const QuizQuestion = ({
   return (
     <div className='quiz-question'>
       <h3 className='quiz-question-title'>{title}</h3>
-      <form className='quiz-form' action=''>
+      <div className='quiz-elements'>
         <div>
           <label className='quiz-element'>
             <img className='quiz-image' alt='Logo' src={img1} />
@@ -95,7 +95,7 @@ const QuizQuestion = ({
             />
           </label>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
