@@ -1,5 +1,7 @@
 .wrap-contact {
+  background-color: var(--space-blue);
   width: 400px;
+  filter: var(--drop-shadow01);
   border-radius: var(--main-border-radius);
   padding: 1.2rem;
   margin: 1.5rem;
@@ -16,8 +18,8 @@
   width: 100%;
   position: relative;
   margin-bottom: 15px;
-  padding-top: 40px;
-
+  padding-top: 20px;
+  background-color: rgba(240, 248, 255, 0.198);
   text-align: left;
   overflow: hidden;
 }

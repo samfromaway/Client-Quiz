@@ -2,7 +2,8 @@ import React from 'react';
 
 const QuizContact = () => {
   return (
-    <div>
+    <div className='wrap-contact'>
+      <h2>Last Step</h2>
       <div className='wrap-input'>
         <input className='input' type='text' name='name' required />
         <label htmlFor='name' className='label'>
@@ -11,9 +12,8 @@ const QuizContact = () => {
       </div>
       <div className='wrap-input'>
         <input className='input' type='text' name='email' required />
-        <label htmlFor='email' className='label'>
-          <span className='label-input'>Email*</span>
-        </label>
+        <label htmlFor='email' className='label'></label>
+        <span className='label-input'>Email*</span>
       </div>
       <div className='wrap-input'>
         <label htmlFor='message' className='label-textfield'>
