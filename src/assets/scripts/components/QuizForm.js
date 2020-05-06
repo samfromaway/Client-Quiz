@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -6,19 +6,16 @@ const encode = (data) => {
     .join('&');
 };
 
-class ContactForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: '', email: '', message: '' };
-  }
+const ContactForm = () => {
+  const [state, setState] = useState({ name: '', email: '', message: '' });
 
   /* Here’s the juicy bit for posting the form submission */
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state }),
+      body: encode({ 'form-name': 'contact', ...state }),
     })
       .then(() => alert('Success!'))
       .catch((error) => alert(error));
@@ -26,50 +23,39 @@ class ContactForm extends Component {
     e.preventDefault();
   };
 
-  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
+  const handleChange = (e) => setState({ [e.target.name]: e.target.value });
 
-  render() {
-    const { name, email, message } = this.state;
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <p>
-          <label>
-            Your Name:{' '}
-            <input
-              type='text'
-              name='name'
-              value={name}
-              onChange={this.handleChange}
-            />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email:{' '}
-            <input
-              type='email'
-              name='email'
-              value={email}
-              onChange={this.handleChange}
-            />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message:{' '}
-            <textarea
-              name='message'
-              value={message}
-              onChange={this.handleChange}
-            />
-          </label>
-        </p>
-        <p>
-          <button type='submit'>Send</button>
-        </p>
-      </form>
-    );
-  }
-}
+  const { name, email, message } = state;
+  return (
+    <form onSubmit={handleSubmit}>
+      <p>
+        <label>
+          Your Name:
+          <input type='text' name='name' value={name} onChange={handleChange} />
+        </label>
+      </p>
+      <p>
+        <label>
+          Your Email:
+          <input
+            type='email'
+            name='email'
+            value={email}
+            onChange={handleChange}
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message:
+          <textarea name='message' value={message} onChange={handleChange} />
+        </label>
+      </p>
+      <p>
+        <button type='submit'>Send</button>
+      </p>
+    </form>
+  );
+};
 
 export default ContactForm;
