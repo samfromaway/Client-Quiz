@@ -3,10 +3,8 @@ import Navbar from './assets/scripts/components/Navbar';
 import ProgressBar from './assets/scripts/components/ProgressBar';
 import QuizQuestion from './assets/scripts/components/QuizQuestion';
 import QuizContact from './assets/scripts/components/QuizContact';
-import {
-  QuizProvider,
-  QuizContext,
-} from './assets/scripts/context/QuizContext';
+import QuizForm from './assets/scripts/components/QuizForm';
+import { QuizProvider } from './assets/scripts/context/QuizContext';
 import design from './images/design01.png';
 import fluidtechnik from './images/fluidtechnik01.png';
 import howToExpat from './images/how-to-expat01.png';
@@ -85,6 +83,7 @@ function App() {
           ))}
           <QuizContact />
         </form>
+        <QuizForm />
       </div>
     </QuizProvider>
   );
