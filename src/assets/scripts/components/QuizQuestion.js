@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { QuizContext } from '../context/QuizContext';
 
 const QuizQuestion = ({
@@ -35,17 +35,12 @@ const QuizQuestion = ({
     } else
       setQuizSummary((prevAnswers) => [
         ...prevAnswers,
-        { id: id, answer: `${name} is ${checked}` },
+        { id: id, answer: `${name} is ${checked}`, title: title },
       ]);
   };
 
-  function ccc() {
-    console.log(quizSummary);
-  }
-
   return (
     <div className='quiz-question'>
-      <button onClick={ccc}>ddd</button>
       <h3 className='quiz-question-title'>{title}</h3>
       <form className='quiz-form' action=''>
         <div>

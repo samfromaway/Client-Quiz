@@ -7,8 +7,6 @@ import design from './images/design01.png';
 import fluidtechnik from './images/fluidtechnik01.png';
 import howToExpat from './images/how-to-expat01.png';
 import howToMedellin from './images/howtomedellin01.png';
-import pneumatikInfo from './images/pneumatikinfo01.png';
-
 import './App.css';
 
 const questions = [
@@ -55,7 +53,7 @@ function App() {
     <QuizProvider>
       <div className='App'>
         <Navbar />
-        <ProgressBar nrOfQuizes={questions.length} />
+        <ProgressBar nrOfQuizes={questions.length} questions={questions} />
         <h2 className='welcome-title'>Thanks for working with us</h2>
         <p className='welcome-desc'>
           Please fill out the quiz so we know how to desing your website or

@@ -1,6 +1,13 @@
 .progress-bar {
-  background-color: white;
+  background-color: rgb(151, 151, 151);
   position: sticky;
   top: 0px;
   left: 0px;
+  transition-duration: 0.4s;
+}
+
+.progress-bar-level {
+  background-color: green;
+  height: 10px;
+  transition: width 1s;
 }
