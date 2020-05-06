@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { QuizContext } from '../context/QuizContext';
 
 const ProgressBar = (props) => {
+  const [quizSummary, setQuizSummary] = useContext(QuizContext);
+  const quizProgress = quizSummary.length;
   const nrOfQuizes = props.nrOfQuizes;
-  const quizProgress = 2;
 
   const progressBarLevelLenght = (nrOfQuizes, quizProgress) => {
     return (100 / nrOfQuizes) * quizProgress;
   };
-
-  console.log(progressBarLevelLenght(nrOfQuizes, quizProgress));
 
   const progressBarLevelStyle = {
     backgroundColor: 'green',

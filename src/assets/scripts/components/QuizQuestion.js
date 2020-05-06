@@ -1,109 +1,108 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
+import { QuizContext } from '../context/QuizContext';
 
-class QuizQuestion extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Checkbox1: 'Not answered',
-      Checkbox2: 'Not answered',
-      Checkbox3: 'Not answered',
-      Checkbox4: 'Not answered',
-    };
+const QuizQuestion = ({
+  title,
+  img1,
+  img2,
+  img3,
+  img4,
+  desc1,
+  desc2,
+  desc3,
+  desc4,
+  id1,
+  id2,
+  id3,
+  id4,
+}) => {
+  const [quizSummary, setQuizSummary] = useContext(QuizContext);
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+  const updateCheckbox1 = (e) => {
+    const name = e.target.name;
+    const checked = e.target.checked;
+    const id = e.target.id;
+    updateQuizSummary(id, name, checked);
+  };
+
+  const updateQuizSummary = (id, name, checked) => {
+    const isAlreadyAnswered = quizSummary.some((answer) => {
+      return answer.id === id;
+    });
+
+    if (isAlreadyAnswered) {
+      setQuizSummary(quizSummary.filter((answer) => answer.id !== id));
+    } else
+      setQuizSummary((prevAnswers) => [
+        ...prevAnswers,
+        { id: id, answer: `${name} is ${checked}` },
+      ]);
+  };
+
+  function ccc() {
+    console.log(quizSummary);
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const checked = target.checked ? 'Checked' : 'Not Checked';
-    const name = target.name;
-    const value = target.value;
-    console.log(target.value);
-
-    switch (value) {
-      case 'Checkbox1':
-        this.setState({ Checkbox1: `${name} is ${checked}` });
-        break;
-      case 'Checkbox2':
-        this.setState({ Checkbox2: `${name} is ${checked}` });
-        break;
-      case 'Checkbox3':
-        this.setState({ Checkbox3: `${name} is ${checked}` });
-        break;
-      case 'Checkbox4':
-        this.setState({ Checkbox4: `${name} is ${checked}` });
-        break;
-      default:
-        this.setState({
-          Checkbox1: 'error',
-          Checkbox2: 'error',
-          Checkbox3: 'error',
-          Checkbox4: 'error',
-        });
-    }
-  }
-
-  render() {
-    return (
-      <div className='quiz-question'>
-        <h3 className='quiz-question-title'>{this.props.title}</h3>
-        <form className='quiz-form' action=''>
-          <div>
-            <label className='quiz-element'>
-              <img className='quiz-image' alt='Logo' src={this.props.img1} />
-              <span>{this.props.desc1}</span>
-              <input
-                className='checkbox'
-                name={this.props.desc1}
-                value='Checkbox1'
-                type='checkbox'
-                onChange={this.handleInputChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label className='quiz-element'>
-              <img className='quiz-image' alt='Logo' src={this.props.img2} />
-              <span>{this.props.desc2}</span>
-              <input
-                className='checkbox'
-                name={this.props.desc2}
-                value='Checkbox2'
-                type='checkbox'
-                onChange={this.handleInputChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label className='quiz-element'>
-              <img className='quiz-image' alt='Logo' src={this.props.img3} />
-              <span>{this.props.desc3}</span>
-              <input
-                className='checkbox'
-                name={this.props.desc3}
-                value='Checkbox3'
-                type='checkbox'
-                onChange={this.handleInputChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label className='quiz-element'>
-              <img className='quiz-image' alt='Logo' src={this.props.img4} />
-              <span>{this.props.desc4}</span>
-              <input
-                className='checkbox'
-                name={this.props.desc4}
-                value='Checkbox4'
-                type='checkbox'
-                onChange={this.handleInputChange}
-              />
-            </label>
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className='quiz-question'>
+      <button onClick={ccc}>ddd</button>
+      <h3 className='quiz-question-title'>{title}</h3>
+      <form className='quiz-form' action=''>
+        <div>
+          <label className='quiz-element'>
+            <img className='quiz-image' alt='Logo' src={img1} />
+            <span>{desc1}</span>
+            <input
+              className='checkbox'
+              id={id1}
+              name={desc1}
+              type='checkbox'
+              onChange={updateCheckbox1}
+            />
+          </label>
+        </div>
+        <div>
+          <label className='quiz-element'>
+            <img className='quiz-image' alt='Logo' src={img2} />
+            <span>{desc2}</span>
+            <input
+              className='checkbox'
+              id={id2}
+              name={desc2}
+              type='checkbox'
+              onChange={updateCheckbox1}
+            />
+          </label>
+        </div>
+        <div>
+          <label className='quiz-element'>
+            <img className='quiz-image' alt='Logo' src={img3} />
+            <span>{desc3}</span>
+            <input
+              className='checkbox'
+              name={desc3}
+              id={id3}
+              type='checkbox'
+              onChange={updateCheckbox1}
+            />
+          </label>
+        </div>
+        <div>
+          <label className='quiz-element'>
+            <img className='quiz-image' alt='Logo' src={img4} />
+            <span>{desc4}</span>
+            <input
+              className='checkbox'
+              name={desc4}
+              id={id4}
+              type='checkbox'
+              onChange={updateCheckbox1}
+            />
+          </label>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default QuizQuestion;
