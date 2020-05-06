@@ -3,25 +3,29 @@ import React from 'react';
 const QuizContact = () => {
   return (
     <div>
-      <div class='wrap-input'>
-        <input class='input' type='text' name='name' required />
-        <label for='name' class='label'>
-          <span class='label-input'>Name*</span>
+      <div className='wrap-input'>
+        <input className='input' type='text' name='name' required />
+        <label htmlFor='name' className='label'>
+          <span className='label-input'>Name*</span>
         </label>
       </div>
-      <div class='wrap-input'>
-        <input class='input' type='text' name='email' required />
-        <label for='email' class='label'>
-          <span class='label-input'>Email*</span>
+      <div className='wrap-input'>
+        <input className='input' type='text' name='email' required />
+        <label htmlFor='email' className='label'>
+          <span className='label-input'>Email*</span>
         </label>
       </div>
-      <div class='wrap-input'>
-        <label for='message' class='label-textfield'>
-          <span class='label-input-textfield'>Message*</span>
+      <div className='wrap-input'>
+        <label htmlFor='message' className='label-textfield'>
+          <span className='label-input-textfield'>Message*</span>
         </label>
-        <textarea class='input-textfield' name='message' required></textarea>
+        <textarea
+          className='input-textfield'
+          name='message'
+          required
+        ></textarea>
       </div>
-      <button class='button contact-btn'>Submit</button>
+      <button className='button contact-btn'>Submit</button>
     </div>
   );
 };

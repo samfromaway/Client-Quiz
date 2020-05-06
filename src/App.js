@@ -64,8 +64,7 @@ function App() {
           Please fill out the quiz so we know how to desing your website or
           grahics
         </p>
-        <form className='quiz-form ' action='' name='contact' method='post'>
-          <input type='hidden' name='form-name' value='contact' />
+        <form className='quiz-form ' action=''>
           {questions.map((questions) => (
             <QuizQuestion
               key={questions._id}
