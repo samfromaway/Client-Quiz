@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../context/QuizContext';
 
-const title1 = 'Which color do you like best?';
-const title2 = 'Which brand do you like better?';
-
 const ProgressBar = (props) => {
   const [quizSummary] = useContext(QuizContext);
 
+  const titles = props.questions.map((e) => e.title);
+
   const checkProgressQuiz1 = quizSummary.some(
-    (answer) => answer.title === title1
+    (answer) => answer.title === titles[0]
   );
   const checkProgressQuiz2 = quizSummary.some(
-    (answer) => answer.title === title2
+    (answer) => answer.title === titles[1]
   );
 
   function countAnsweredQuizes() {
@@ -24,8 +23,6 @@ const ProgressBar = (props) => {
     );
     return total;
   }
-
-  console.log(props.questions.map((e) => e.title));
 
   const quizProgress = countAnsweredQuizes();
   const nrOfQuizes = props.nrOfQuizes;
