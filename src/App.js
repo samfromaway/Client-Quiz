@@ -64,7 +64,7 @@ function App() {
           Please fill out the quiz so we know how to desing your website or
           grahics
         </p>
-        <form className='quiz-form' action=''>
+        <form className='quiz-form' action='' netlify>
           {questions.map((questions) => (
             <QuizQuestion
               key={questions._id}
