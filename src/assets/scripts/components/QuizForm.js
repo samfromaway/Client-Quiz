@@ -16,7 +16,7 @@ const ContactForm = ({ questions }) => {
 
   const formatQuizAnswers = quizSummary.map((answers) => answers.answer);
 
-  console.log(...formatQuizAnswers);
+  console.log(formatQuizAnswers);
 
   const handleSubmit = (e) => {
     fetch('/', {
@@ -27,7 +27,7 @@ const ContactForm = ({ questions }) => {
         ...name,
         ...email,
         ...message,
-        ...formatQuizAnswers,
+        formatQuizAnswers,
       }),
     })
       .then(() => alert('Success!'))
