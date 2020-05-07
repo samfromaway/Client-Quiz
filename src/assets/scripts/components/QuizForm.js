@@ -26,8 +26,8 @@ const ContactForm = () => {
   };
 
   const nameChange = (e) => setName({ name: e.target.value });
-  const emailChange = (e) => setEmail({ name: e.target.value });
-  const messageChange = (e) => setMessage({ name: e.target.value });
+  const emailChange = (e) => setEmail({ email: e.target.value });
+  const messageChange = (e) => setMessage({ message: e.target.value });
 
   return (
     <form onSubmit={handleSubmit}>
