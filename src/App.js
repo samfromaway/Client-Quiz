@@ -71,10 +71,10 @@ function App() {
 
 export default App;
 
-// clear form
-// thanks style
-// mobile thanks box
+// V.1.0.0 works
+// thanks style mobile also
 
 //NICE TO HAVE
+// step one of four progess bar
 // answer sort
 // see results
