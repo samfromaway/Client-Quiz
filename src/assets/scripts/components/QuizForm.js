@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import QuizQuestion from './/QuizQuestion';
+import QuizContact from './QuizContact';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -6,7 +8,7 @@ const encode = (data) => {
     .join('&');
 };
 
-const ContactForm = () => {
+const ContactForm = ({ questions }) => {
   const [name, setName] = useState({ name: '' });
   const [email, setEmail] = useState({ email: '' });
   const [message, setMessage] = useState({ message: '' });
@@ -30,28 +32,64 @@ const ContactForm = () => {
   const messageChange = (e) => setMessage({ message: e.target.value });
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>
-        <label>
-          Your Name:
-          <input type='text' name='name' onChange={nameChange} />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Email:
-          <input type='email' name='email' onChange={emailChange} />
-        </label>
-      </p>
-      <p>
-        <label>
-          Message:
-          <textarea name='message' onChange={messageChange} />
-        </label>
-      </p>
-      <p>
-        <button type='submit'>Send</button>
-      </p>
+    <form className='quiz-form' onSubmit={handleSubmit}>
+      {questions.map((questions) => (
+        <QuizQuestion
+          key={questions._id}
+          id1={questions.options.id1}
+          id2={questions.options.id2}
+          id3={questions.options.id3}
+          id4={questions.options.id4}
+          title={questions.title}
+          img1={questions.options.img1}
+          img2={questions.options.img2}
+          img3={questions.options.img3}
+          img4={questions.options.img4}
+          desc1={questions.options.desc1}
+          desc2={questions.options.desc2}
+          desc3={questions.options.desc3}
+          desc4={questions.options.desc4}
+        />
+      ))}
+      <div className='wrap-contact'>
+        <h2 className='contact-form-title'>Last Step</h2>
+        <div className='wrap-input'>
+          <input
+            className='input'
+            type='text'
+            name='name'
+            onChange={nameChange}
+            required
+          />
+          <label htmlFor='name' className='label'>
+            <span className='label-input'>Name*</span>
+          </label>
+        </div>
+        <div className='wrap-input'>
+          <input
+            className='input'
+            type='text'
+            name='email'
+            onChange={emailChange}
+            required
+          />
+          <label htmlFor='email' className='label'>
+            <span className='label-input'>Email*</span>
+          </label>
+        </div>
+        <div className='wrap-input'>
+          <textarea
+            className='input-textfield'
+            name='message'
+            onChange={messageChange}
+            required
+          ></textarea>
+          <label htmlFor='message' className='label-textfield'>
+            <span className='label-textfield-input'>Message*</span>
+          </label>
+        </div>
+        <button className='button contact-btn'>Submit</button>
+      </div>
     </form>
   );
 };

@@ -1,8 +1,6 @@
 import React from 'react';
 import Navbar from './assets/scripts/components/Navbar';
 import ProgressBar from './assets/scripts/components/ProgressBar';
-import QuizQuestion from './assets/scripts/components/QuizQuestion';
-import QuizContact from './assets/scripts/components/QuizContact';
 import QuizForm from './assets/scripts/components/QuizForm';
 import { QuizProvider } from './assets/scripts/context/QuizContext';
 import design from './images/design01.png';
@@ -62,28 +60,7 @@ function App() {
           Please fill out the quiz so we know how to desing your website or
           grahics
         </p>
-        <form className='quiz-form ' action=''>
-          {questions.map((questions) => (
-            <QuizQuestion
-              key={questions._id}
-              id1={questions.options.id1}
-              id2={questions.options.id2}
-              id3={questions.options.id3}
-              id4={questions.options.id4}
-              title={questions.title}
-              img1={questions.options.img1}
-              img2={questions.options.img2}
-              img3={questions.options.img3}
-              img4={questions.options.img4}
-              desc1={questions.options.desc1}
-              desc2={questions.options.desc2}
-              desc3={questions.options.desc3}
-              desc4={questions.options.desc4}
-            />
-          ))}
-          <QuizContact />
-        </form>
-        <QuizForm />
+        <QuizForm questions={questions} key={questions._id} />
       </div>
     </QuizProvider>
   );
