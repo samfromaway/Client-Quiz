@@ -23,7 +23,6 @@ const ContactForm = ({ questions }) => {
         ...name,
         ...email,
         ...message,
-        ...QuizContext,
       }),
     })
       .then(() => alert('Success!'))
