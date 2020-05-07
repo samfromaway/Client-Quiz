@@ -44,7 +44,7 @@ const ContactForm = ({ questions }) => {
   };
 
   return (
-    <form className='quiz-form' onSubmit={handleSubmit} netlify>
+    <form className='quiz-form' onSubmit={handleSubmit}>
       {questions.map((questions) => (
         <QuizQuestion
           key={questions._id}
