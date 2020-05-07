@@ -23,7 +23,7 @@ const ContactForm = ({ questions }) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': 'contact2',
+        'form-name': 'contact',
         ...name,
         ...email,
         ...message,
