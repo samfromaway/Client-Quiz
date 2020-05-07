@@ -27,11 +27,9 @@ const ContactForm = ({ questions }) => {
         ...name,
         ...email,
         ...message,
-        formatQuizAnswers,
       }),
     })
       .then(() => alert('Success!'))
-      .then(clearContactForm())
       .catch((error) => alert(error));
 
     e.preventDefault();
@@ -49,7 +47,7 @@ const ContactForm = ({ questions }) => {
   };
 
   return (
-    <form className='quiz-form' onSubmit={handleSubmit}>
+    <form className='quiz-form' onSubmit={handleSubmit} netlify>
       {questions.map((questions) => (
         <QuizQuestion
           key={questions._id}
@@ -75,6 +73,7 @@ const ContactForm = ({ questions }) => {
             className='input'
             type='text'
             name='name'
+            value={name}
             onChange={nameChange}
             required
           />
@@ -87,6 +86,7 @@ const ContactForm = ({ questions }) => {
             className='input'
             type='text'
             name='email'
+            value={email}
             onChange={emailChange}
             required
           />
@@ -98,6 +98,7 @@ const ContactForm = ({ questions }) => {
           <textarea
             className='input-textfield'
             name='message'
+            value={message}
             onChange={messageChange}
             required
           ></textarea>
