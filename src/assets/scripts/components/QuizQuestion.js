@@ -40,7 +40,7 @@ const QuizQuestion = ({
         ...prevAnswers,
         {
           id: id,
-          answer: `${name} -> Answer: ${value} Status: ${checked}`,
+          answer: `${name} -> Answer: ${value} Status: ${checked} ||`,
           title: title,
         },
       ]);
