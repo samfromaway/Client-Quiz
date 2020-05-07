@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import QuizQuestion from './/QuizQuestion';
-import QuizContact from './QuizContact';
+import React, { useState, useContext } from 'react';
+import QuizQuestion from './QuizQuestion';
+import { QuizContext } from '../context/QuizContext';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -9,9 +9,12 @@ const encode = (data) => {
 };
 
 const ContactForm = ({ questions }) => {
+  const [quizSummary] = useContext(QuizContext);
   const [name, setName] = useState({ name: '' });
   const [email, setEmail] = useState({ email: '' });
   const [message, setMessage] = useState({ message: '' });
+
+  console.log(...quizSummary);
 
   /* Here’s the juicy bit for posting the form submission */
 
@@ -19,9 +22,16 @@ const ContactForm = ({ questions }) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...name, ...email, ...message }),
+      body: encode({
+        'form-name': 'contact',
+        ...name,
+        ...email,
+        ...message,
+        ...quizSummary,
+      }),
     })
       .then(() => alert('Success!'))
+      .then(clearContactForm())
       .catch((error) => alert(error));
 
     e.preventDefault();
@@ -30,6 +40,13 @@ const ContactForm = ({ questions }) => {
   const nameChange = (e) => setName({ name: e.target.value });
   const emailChange = (e) => setEmail({ email: e.target.value });
   const messageChange = (e) => setMessage({ message: e.target.value });
+
+  // Only contact not checkboxes // Not finished yet
+  const clearContactForm = () => {
+    setName({ name: '' });
+    setEmail({ email: '' });
+    setMessage({ message: '' });
+  };
 
   return (
     <form className='quiz-form' onSubmit={handleSubmit}>
