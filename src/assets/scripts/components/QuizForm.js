@@ -14,10 +14,6 @@ const ContactForm = ({ questions }) => {
   const [email, setEmail] = useState({ email: '' });
   const [message, setMessage] = useState({ message: '' });
 
-  const formatQuizAnswers = quizSummary.map((answers) => answers.answer);
-
-  console.log(formatQuizAnswers);
-
   const handleSubmit = (e) => {
     fetch('/', {
       method: 'POST',
@@ -27,6 +23,7 @@ const ContactForm = ({ questions }) => {
         ...name,
         ...email,
         ...message,
+        ...QuizContext,
       }),
     })
       .then(() => alert('Success!'))
@@ -73,7 +70,7 @@ const ContactForm = ({ questions }) => {
             className='input'
             type='text'
             name='name'
-            value={name}
+            value={name.name}
             onChange={nameChange}
             required
           />
@@ -86,7 +83,7 @@ const ContactForm = ({ questions }) => {
             className='input'
             type='text'
             name='email'
-            value={email}
+            value={email.email}
             onChange={emailChange}
             required
           />
@@ -98,7 +95,7 @@ const ContactForm = ({ questions }) => {
           <textarea
             className='input-textfield'
             name='message'
-            value={message}
+            value={message.message}
             onChange={messageChange}
             required
           ></textarea>
