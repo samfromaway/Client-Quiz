@@ -1,0 +1,33 @@
+.thanks-wrapper {
+  display: none;
+}
+
+.thanks-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--space-blue);
+  border-radius: var(--main-border-radius);
+  border: 3px solid rgb(80, 82, 209);
+  height: 50%;
+  width: 30%;
+  filter: var(--drop-shadow01);
+}
+
+.thanks-img {
+  height: 150px;
+}
+
+.thanks-wrapper-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.431);
+}

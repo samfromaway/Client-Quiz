@@ -3,6 +3,7 @@ import Navbar from './assets/scripts/components/Navbar';
 import ProgressBar from './assets/scripts/components/ProgressBar';
 import QuizForm from './assets/scripts/components/QuizForm';
 import { QuizProvider } from './assets/scripts/context/QuizContext';
+import { ThanksProvider } from './assets/scripts/context/ThanksContext';
 import design from './images/design01.png';
 import fluidtechnik from './images/fluidtechnik01.png';
 import howToExpat from './images/how-to-expat01.png';
@@ -51,22 +52,29 @@ const questions = [
 
 function App() {
   return (
-    <QuizProvider>
-      <div className='App'>
-        <Navbar />
-        <ProgressBar nrOfQuizes={questions.length} questions={questions} />
-        <h2 className='welcome-title'>Thanks for working with us</h2>
-        <p className='welcome-desc'>
-          Please fill out the quiz so we know how to desing your website or
-          grahics
-        </p>
-        <QuizForm questions={questions} key={questions._id} />
-      </div>
-    </QuizProvider>
+    <ThanksProvider>
+      <QuizProvider>
+        <div className='App'>
+          <Navbar />
+          <ProgressBar nrOfQuizes={questions.length} questions={questions} />
+          <h2 className='welcome-title'>Thanks for working with us</h2>
+          <p className='welcome-desc'>
+            Please fill out the quiz so we know how to desing your website or
+            grahics
+          </p>
+          <QuizForm questions={questions} key={questions._id} />
+        </div>
+      </QuizProvider>
+    </ThanksProvider>
   );
 }
 
 export default App;
 
 // clear form
-// thanks
+// thanks style
+// mobile thanks box
+
+//NICE TO HAVE
+// answer sort
+// see results

@@ -1,11 +1,12 @@
 @import url(./assets/styles/1-base/global.css);
 @import url(./assets/styles/1-base/typography.css);
+@import url(./assets/styles/2-layout/welcome.css);
 @import url(./assets/styles/3-components/navigation.css);
 @import url(./assets/styles/3-components/buttons.css);
 @import url(./assets/styles/3-components/quiz-question.css);
 @import url(./assets/styles/3-components/quiz-contact.css);
 @import url(./assets/styles/3-components/progress-bar.css);
-@import url(./assets/styles/2-layout/welcome.css);
+@import url(./assets/styles/3-components/thanks.css);
 
 /* --- Colors  --- */
 :root {
