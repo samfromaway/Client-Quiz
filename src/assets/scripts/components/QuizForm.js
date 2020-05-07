@@ -7,7 +7,9 @@ const encode = (data) => {
 };
 
 const ContactForm = () => {
-  const [state, setState] = useState({ name: '', email: '', message: '' });
+  const [name, setName] = useState({ name: '' });
+  const [email, setEmail] = useState({ email: '' });
+  const [message, setMessage] = useState({ message: '' });
 
   /* Here’s the juicy bit for posting the form submission */
 
@@ -15,7 +17,7 @@ const ContactForm = () => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...state }),
+      body: encode({ 'form-name': 'contact', name, email, message }),
     })
       .then(() => alert('Success!'))
       .catch((error) => alert(error));
@@ -23,32 +25,28 @@ const ContactForm = () => {
     e.preventDefault();
   };
 
-  const handleChange = (e) => setState({ [e.target.name]: e.target.value });
+  const nameChange = (e) => setName({ name: e.target.value });
+  const emailChange = (e) => setEmail({ name: e.target.value });
+  const messageChange = (e) => setMessage({ name: e.target.value });
 
-  const { name, email, message } = state;
   return (
     <form onSubmit={handleSubmit}>
       <p>
         <label>
           Your Name:
-          <input type='text' name='name' value={name} onChange={handleChange} />
+          <input type='text' name='name' onChange={nameChange} />
         </label>
       </p>
       <p>
         <label>
           Your Email:
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={handleChange}
-          />
+          <input type='email' name='email' onChange={emailChange} />
         </label>
       </p>
       <p>
         <label>
           Message:
-          <textarea name='message' value={message} onChange={handleChange} />
+          <textarea name='message' onChange={messageChange} />
         </label>
       </p>
       <p>
