@@ -14,9 +14,9 @@ const ContactForm = ({ questions }) => {
   const [email, setEmail] = useState({ email: '' });
   const [message, setMessage] = useState({ message: '' });
 
-  console.log(...quizSummary);
+  const formatQuizAnswers = quizSummary.map((answers) => answers.answer);
 
-  /* Here’s the juicy bit for posting the form submission */
+  console.log(...formatQuizAnswers);
 
   const handleSubmit = (e) => {
     fetch('/', {
@@ -27,7 +27,7 @@ const ContactForm = ({ questions }) => {
         ...name,
         ...email,
         ...message,
-        ...quizSummary,
+        ...formatQuizAnswers,
       }),
     })
       .then(() => alert('Success!'))

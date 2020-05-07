@@ -22,20 +22,27 @@ const QuizQuestion = ({
     const name = e.target.name;
     const checked = e.target.checked;
     const id = e.target.id;
-    updateQuizSummary(id, name, checked);
+    const value = e.target.value;
+    updateQuizSummary(id, name, value, checked);
   };
 
-  const updateQuizSummary = (id, name, checked) => {
+  const updateQuizSummary = (id, name, value, checked) => {
     const isAlreadyAnswered = quizSummary.some((answer) => {
       return answer.id === id;
     });
 
     if (isAlreadyAnswered) {
       setQuizSummary(quizSummary.filter((answer) => answer.id !== id));
-    } else
+    }
+    //in the template expression ${checked} is only there to see if there is a mistake
+    else
       setQuizSummary((prevAnswers) => [
         ...prevAnswers,
-        { id: id, answer: `${name} is ${checked}`, title: title },
+        {
+          id: id,
+          answer: `${name} -> Answer: ${value} Status: ${checked}`,
+          title: title,
+        },
       ]);
   };
 
@@ -51,6 +58,7 @@ const QuizQuestion = ({
               className='checkbox'
               id={id1}
               name={id1}
+              value={desc1}
               type='checkbox'
               onChange={updateCheckbox1}
             />
@@ -64,6 +72,7 @@ const QuizQuestion = ({
               className='checkbox'
               id={id2}
               name={id2}
+              value={desc2}
               type='checkbox'
               onChange={updateCheckbox1}
             />
@@ -77,6 +86,7 @@ const QuizQuestion = ({
               className='checkbox'
               name={id3}
               id={id3}
+              value={desc3}
               type='checkbox'
               onChange={updateCheckbox1}
             />
@@ -89,6 +99,7 @@ const QuizQuestion = ({
             <input
               className='checkbox'
               name={id4}
+              value={desc4}
               id={id4}
               type='checkbox'
               onChange={updateCheckbox1}
