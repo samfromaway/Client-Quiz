@@ -71,7 +71,7 @@ function App() {
 
 export default App;
 
-// V.1.0.0 works
+// v.1.0.0 works
 // thanks style mobile also
 
 //NICE TO HAVE
