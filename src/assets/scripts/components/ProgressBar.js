@@ -9,14 +9,36 @@ const ProgressBar = (props) => {
   const checkProgressQuiz1 = quizSummary.some(
     (answer) => answer.title === titles[0]
   );
+
   const checkProgressQuiz2 = quizSummary.some(
     (answer) => answer.title === titles[1]
+  );
+
+  const checkProgressQuiz3 = quizSummary.some(
+    (answer) => answer.title === titles[2]
+  );
+
+  const checkProgressQuiz4 = quizSummary.some(
+    (answer) => answer.title === titles[3]
+  );
+
+  const checkProgressQuiz5 = quizSummary.some(
+    (answer) => answer.title === titles[4]
   );
 
   function countAnsweredQuizes() {
     const isQuizOneAnswered = checkProgressQuiz1 ? 1 : 0;
     const isQuizTwoAnswered = checkProgressQuiz2 ? 1 : 0;
-    const allQuizes = [isQuizTwoAnswered, isQuizOneAnswered];
+    const isQuizThreeAnswered = checkProgressQuiz3 ? 1 : 0;
+    const isQuizFourAnswered = checkProgressQuiz4 ? 1 : 0;
+    const isQuizFiveAnswered = checkProgressQuiz5 ? 1 : 0;
+    const allQuizes = [
+      isQuizTwoAnswered,
+      isQuizOneAnswered,
+      isQuizThreeAnswered,
+      isQuizFourAnswered,
+      isQuizFiveAnswered,
+    ];
     let total = allQuizes.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
       0

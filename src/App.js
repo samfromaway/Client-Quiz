@@ -31,7 +31,7 @@ import './App.css';
 const questions = [
   {
     title: 'Which brand do you like?',
-    _id: 1,
+    _id: 'a',
     options: {
       img1: adidas,
       desc1: 'Adidas',
@@ -49,7 +49,7 @@ const questions = [
   },
   {
     title: 'Which color do you like?',
-    _id: 2,
+    _id: 'b',
     options: {
       img1: blue,
       desc1: 'Blue',
@@ -67,44 +67,44 @@ const questions = [
   },
   {
     title: 'Which font do you like?',
-    _id: 3,
+    _id: 'c',
     options: {
       img1: openSans,
       desc1: 'Open Sans',
-      id1: 'd1',
+      id1: 'c1',
       img2: times,
       desc2: 'Times',
-      id2: 'd2',
+      id2: 'c2',
       img3: comic,
       desc3: 'Comic',
-      id3: 'd3',
+      id3: 'c3',
       img4: verdana,
       desc4: 'Verdana',
-      id4: 'd4',
+      id4: 'c4',
     },
   },
   {
     title: 'Which logo do you like?',
-    _id: 4,
+    _id: 'd',
     options: {
       img1: logo01,
       desc1: 'Minimal',
-      id1: 'c1',
+      id1: 'd1',
       img2: logo02,
       desc2: 'Classic',
-      id2: 'c2',
+      id2: 'd2',
       img3: logo03,
       desc3: 'Modern',
-      id3: 'c3',
+      id3: 'd3',
       img4: logo04,
       desc4: 'Playful',
-      id4: 'c4',
+      id4: 'd4',
     },
   },
 
   {
-    title: 'Which brand do you like?',
-    _id: 5,
+    title: 'Which of the brands do you like?',
+    _id: 'e',
     options: {
       img1: apple,
       desc1: 'Apple',

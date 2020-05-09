@@ -15,6 +15,7 @@ const QuizQuestion = ({
   id2,
   id3,
   id4,
+  id,
 }) => {
   const [quizSummary, setQuizSummary] = useContext(QuizContext);
 
