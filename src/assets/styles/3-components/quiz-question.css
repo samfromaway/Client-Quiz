@@ -28,8 +28,8 @@
 }
 
 .quiz-image {
-  height: 120px;
-  margin: 1rem;
+  height: 100px;
+  margin: 1rem 2rem;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -41,16 +41,14 @@
 
 .checkbox {
   background-color: aliceblue;
-  /*display: none;*/
+  display: none;
   width: 30px;
   height: 25px;
   width: 25px;
-  border: 1px solid #34495e;
-  border-radius: 4px;
-  background-color: #41b88300;
   cursor: pointer;
 }
 
-.checkbox:checked + img {
-  outline: 5px solid #34495e;
+.checkbox:checked + .quiz-image,
+.checkbox:checked ~ span {
+  filter: var(--drop-shadow01);
 }

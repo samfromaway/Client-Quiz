@@ -52,8 +52,6 @@ const QuizQuestion = ({
       <div className='quiz-elements'>
         <div>
           <label className='quiz-element'>
-            <img className='quiz-image' alt='Logo' src={img1} />
-            <span>{desc1}</span>
             <input
               className='checkbox'
               id={id1}
@@ -62,12 +60,12 @@ const QuizQuestion = ({
               type='checkbox'
               onChange={updateCheckbox1}
             />
+            <img className='quiz-image' alt='Logo' src={img1} />
+            <span>{desc1}</span>
           </label>
         </div>
         <div>
           <label className='quiz-element'>
-            <img className='quiz-image' alt='Logo' src={img2} />
-            <span>{desc2}</span>
             <input
               className='checkbox'
               id={id2}
@@ -76,12 +74,12 @@ const QuizQuestion = ({
               type='checkbox'
               onChange={updateCheckbox1}
             />
+            <img className='quiz-image' alt='Logo' src={img2} />
+            <span>{desc2}</span>
           </label>
         </div>
         <div>
           <label className='quiz-element'>
-            <img className='quiz-image' alt='Logo' src={img3} />
-            <span>{desc3}</span>
             <input
               className='checkbox'
               name={id3}
@@ -90,12 +88,12 @@ const QuizQuestion = ({
               type='checkbox'
               onChange={updateCheckbox1}
             />
+            <img className='quiz-image' alt='Logo' src={img3} />
+            <span>{desc3}</span>
           </label>
         </div>
         <div>
           <label className='quiz-element'>
-            <img className='quiz-image' alt='Logo' src={img4} />
-            <span>{desc4}</span>
             <input
               className='checkbox'
               name={id4}
@@ -104,6 +102,8 @@ const QuizQuestion = ({
               type='checkbox'
               onChange={updateCheckbox1}
             />
+            <img className='quiz-image' alt='Logo' src={img4} />
+            <span>{desc4}</span>
           </label>
         </div>
       </div>

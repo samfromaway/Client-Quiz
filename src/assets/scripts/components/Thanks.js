@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { ThanksContext } from '../context/ThanksContext';
-import howToMedellin from '../../../images/howtomedellin01.png';
+import check from '../../../images/check.png';
 
 const Thanks = () => {
   const [thanksBox, setThanksBoxState] = useContext(ThanksContext);
@@ -16,10 +16,10 @@ const Thanks = () => {
       <div className='thanks-box'>
         <h3>Thanks</h3>
         <h4>Sent successfully</h4>
-        <img className='thanks-img' src={howToMedellin} alt='' />
+        <img className='thanks-img' src={check} alt='' />
         <p>We will get back to you soon</p>
         <button className='button' onClick={closeThanksBox}>
-          Close (See Results)
+          Close
         </button>
       </div>
     </div>

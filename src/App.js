@@ -4,48 +4,119 @@ import ProgressBar from './assets/scripts/components/ProgressBar';
 import QuizForm from './assets/scripts/components/QuizForm';
 import { QuizProvider } from './assets/scripts/context/QuizContext';
 import { ThanksProvider } from './assets/scripts/context/ThanksContext';
-import design from './images/design01.png';
-import fluidtechnik from './images/fluidtechnik01.png';
-import howToExpat from './images/how-to-expat01.png';
-import howToMedellin from './images/howtomedellin01.png';
+import adidas from './images/Quiz/adidas.png';
+import amazon from './images/Quiz/amazon.png';
+import apple from './images/Quiz/apple.png';
+import blue from './images/Quiz/blue.png';
+import green from './images/Quiz/green.png';
+import hm from './images/Quiz/h&m.png';
+import lacoste from './images/Quiz/lacoste.png';
+import logo01 from './images/Quiz/logo01.png';
+import logo02 from './images/Quiz/logo02.png';
+import logo03 from './images/Quiz/logo03.png';
+import logo04 from './images/Quiz/logo04.png';
+import nike from './images/Quiz/nike.png';
+import openSans from './images/Quiz/open-sans.png';
+import purple from './images/Quiz/purple.png';
+import red from './images/Quiz/red.png';
+import samsung from './images/Quiz/samsung.png';
+import comic from './images/Quiz/comic.png';
+import times from './images/Quiz/times.png';
+import verdana from './images/Quiz/verdana.png';
+import windows from './images/Quiz/windows.png';
+
 import './App.css';
 
 //when adding questions, edits have to be done in ProgressBar.js
 const questions = [
   {
-    title: 'Which color do you like best?',
+    title: 'Which brand do you like?',
     _id: 1,
     options: {
-      img1: design,
-      desc1: 'This is a design1',
+      img1: adidas,
+      desc1: 'Adidas',
       id1: 'a1',
-      img2: fluidtechnik,
-      desc2: 'This is a design2',
+      img2: lacoste,
+      desc2: 'Lacoste',
       id2: 'a2',
-      img3: howToExpat,
-      desc3: 'This is a design3',
+      img3: nike,
+      desc3: 'Nike',
       id3: 'a3',
-      img4: howToMedellin,
-      desc4: 'This is a design4',
+      img4: hm,
+      desc4: 'H&M',
       id4: 'a4',
     },
   },
   {
-    title: 'Which brand do you like better?',
+    title: 'Which color do you like?',
     _id: 2,
     options: {
-      img1: design,
-      desc1: 'This is a design11',
+      img1: blue,
+      desc1: 'Blue',
       id1: 'b1',
-      img2: fluidtechnik,
-      desc2: 'This is a design12',
+      img2: green,
+      desc2: 'Green',
       id2: 'b2',
-      img3: howToExpat,
-      desc3: 'This is a design13',
+      img3: red,
+      desc3: 'Red',
       id3: 'b3',
-      img4: howToMedellin,
-      desc4: 'This is a design14',
+      img4: purple,
+      desc4: 'Purple',
       id4: 'b4',
+    },
+  },
+  {
+    title: 'Which logo do you like?',
+    _id: 3,
+    options: {
+      img1: logo01,
+      desc1: 'Minimal',
+      id1: 'c1',
+      img2: logo02,
+      desc2: 'Classic',
+      id2: 'c2',
+      img3: logo03,
+      desc3: 'Modern',
+      id3: 'c3',
+      img4: logo04,
+      desc4: 'Playful',
+      id4: 'c4',
+    },
+  },
+  {
+    title: 'Which font do you like?',
+    _id: 4,
+    options: {
+      img1: openSans,
+      desc1: 'Open Sans',
+      id1: 'd1',
+      img2: times,
+      desc2: 'Times',
+      id2: 'd2',
+      img3: comic,
+      desc3: 'Comic',
+      id3: 'd3',
+      img4: verdana,
+      desc4: 'Verdana',
+      id4: 'd4',
+    },
+  },
+  {
+    title: 'Which brand do you like?',
+    _id: 5,
+    options: {
+      img1: apple,
+      desc1: 'Apple',
+      id1: 'e1',
+      img2: windows,
+      desc2: 'Windows',
+      id2: 'e2',
+      img3: amazon,
+      desc3: 'Amazon',
+      id3: 'e3',
+      img4: samsung,
+      desc4: 'Samsung',
+      id4: 'e4',
     },
   },
 ];
@@ -73,6 +144,7 @@ export default App;
 
 // v.1.0.0 works
 // thanks style mobile also
+// total questions answered form appear?
 
 //NICE TO HAVE
 // step one of four progess bar
