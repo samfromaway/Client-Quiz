@@ -25,6 +25,10 @@
   margin: 1rem;
 }
 
+.thanks-box p {
+  text-align: center;
+}
+
 .thanks-wrapper-show {
   display: flex;
   flex-direction: column;
@@ -36,4 +40,11 @@
   width: 100%;
   z-index: 200;
   background-color: rgba(0, 0, 0, 0.431);
+}
+
+@media screen and (max-width: 768px) {
+  .thanks-box {
+    width: 90%;
+    height: 70%;
+  }
 }

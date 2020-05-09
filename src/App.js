@@ -66,26 +66,8 @@ const questions = [
     },
   },
   {
-    title: 'Which logo do you like?',
-    _id: 3,
-    options: {
-      img1: logo01,
-      desc1: 'Minimal',
-      id1: 'c1',
-      img2: logo02,
-      desc2: 'Classic',
-      id2: 'c2',
-      img3: logo03,
-      desc3: 'Modern',
-      id3: 'c3',
-      img4: logo04,
-      desc4: 'Playful',
-      id4: 'c4',
-    },
-  },
-  {
     title: 'Which font do you like?',
-    _id: 4,
+    _id: 3,
     options: {
       img1: openSans,
       desc1: 'Open Sans',
@@ -101,6 +83,25 @@ const questions = [
       id4: 'd4',
     },
   },
+  {
+    title: 'Which logo do you like?',
+    _id: 4,
+    options: {
+      img1: logo01,
+      desc1: 'Minimal',
+      id1: 'c1',
+      img2: logo02,
+      desc2: 'Classic',
+      id2: 'c2',
+      img3: logo03,
+      desc3: 'Modern',
+      id3: 'c3',
+      img4: logo04,
+      desc4: 'Playful',
+      id4: 'c4',
+    },
+  },
+
   {
     title: 'Which brand do you like?',
     _id: 5,
@@ -150,3 +151,4 @@ export default App;
 // step one of four progess bar
 // answer sort
 // see results
+// local storage

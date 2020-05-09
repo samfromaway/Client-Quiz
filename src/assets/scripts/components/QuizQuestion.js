@@ -50,8 +50,8 @@ const QuizQuestion = ({
     <div className='quiz-question'>
       <h3 className='quiz-question-title'>{title}</h3>
       <div className='quiz-elements'>
-        <div>
-          <label className='quiz-element'>
+        <div className='quiz-element'>
+          <label className='quiz-label'>
             <input
               className='checkbox'
               id={id1}
@@ -61,11 +61,11 @@ const QuizQuestion = ({
               onChange={updateCheckbox1}
             />
             <img className='quiz-image' alt='Logo' src={img1} />
-            <span>{desc1}</span>
+            <span className='quiz-span'>{desc1}</span>
           </label>
         </div>
-        <div>
-          <label className='quiz-element'>
+        <div className='quiz-element'>
+          <label className='quiz-label'>
             <input
               className='checkbox'
               id={id2}
@@ -75,11 +75,11 @@ const QuizQuestion = ({
               onChange={updateCheckbox1}
             />
             <img className='quiz-image' alt='Logo' src={img2} />
-            <span>{desc2}</span>
+            <span className='quiz-span'>{desc2}</span>
           </label>
         </div>
-        <div>
-          <label className='quiz-element'>
+        <div className='quiz-element'>
+          <label className='quiz-label'>
             <input
               className='checkbox'
               name={id3}
@@ -89,11 +89,11 @@ const QuizQuestion = ({
               onChange={updateCheckbox1}
             />
             <img className='quiz-image' alt='Logo' src={img3} />
-            <span>{desc3}</span>
+            <span className='quiz-span'>{desc3}</span>
           </label>
         </div>
-        <div>
-          <label className='quiz-element'>
+        <div className='quiz-element'>
+          <label className='quiz-label'>
             <input
               className='checkbox'
               name={id4}
@@ -103,7 +103,7 @@ const QuizQuestion = ({
               onChange={updateCheckbox1}
             />
             <img className='quiz-image' alt='Logo' src={img4} />
-            <span>{desc4}</span>
+            <span className='quiz-span'>{desc4}</span>
           </label>
         </div>
       </div>

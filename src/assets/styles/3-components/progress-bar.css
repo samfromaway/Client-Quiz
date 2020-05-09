@@ -4,10 +4,12 @@
   top: 0px;
   left: 0px;
   transition-duration: 0.4s;
+  z-index: 100;
 }
 
 .progress-bar-level {
   background-color: green;
   height: 10px;
   transition: width 1s;
+  z-index: 100;
 }

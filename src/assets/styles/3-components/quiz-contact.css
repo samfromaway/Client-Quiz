@@ -120,3 +120,9 @@ select:-webkit-autofill:focus {
 .input-textfield:valid + .label-textfield .label-textfield-input {
   transform: translateY(-165%);
 }
+
+@media screen and (max-width: 768px) {
+  .wrap-contact {
+    width: 90%;
+  }
+}

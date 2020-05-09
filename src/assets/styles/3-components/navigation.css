@@ -35,6 +35,10 @@
   padding-bottom: 4px;
 }
 
+nav h3 {
+  text-align: center;
+}
+
 /* Link Details*/
 
 .nav-link::before {
@@ -55,4 +59,14 @@
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+@media screen and (max-width: 768px) {
+  nav h3 {
+    display: none;
+  }
+
+  .nav-link {
+    display: none;
+  }
 }
