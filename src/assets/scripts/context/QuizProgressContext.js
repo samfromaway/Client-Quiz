@@ -4,7 +4,7 @@ import { QuizContext } from '../context/QuizContext';
 export const QuizProgressContext = createContext();
 
 export const QuizProgressProvider = (props) => {
-  const [quizSummary, setQuizSummary] = useContext(QuizContext);
+  const [quizSummary] = useContext(QuizContext);
   const [quizProgress, setQuizProgress] = useState(0);
 
   const titles = props.questions.map((e) => e.title);

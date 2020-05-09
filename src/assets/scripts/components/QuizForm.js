@@ -14,7 +14,7 @@ const encode = (data) => {
 const ContactForm = ({ questions, nrOfQuizes }) => {
   const [quizSummary] = useContext(QuizContext);
   const [thanksBox, setThanksBoxState] = useContext(ThanksContext);
-  const [quizProgress, setQuizProgress] = useContext(QuizProgressContext);
+  const [quizProgress] = useContext(QuizProgressContext);
 
   const [name, setName] = useState({ name: '' });
   const [email, setEmail] = useState({ email: '' });
@@ -58,8 +58,7 @@ const ContactForm = ({ questions, nrOfQuizes }) => {
 
   const fillOutMessage =
     nrOfQuizes - quizProgress !== 0
-      ? `Please fill out all the questions.
-      You have  ${questionsToGo} to go 🤔`
+      ? ` You have  ${questionsToGo} Questions to go 🤔`
       : 'Almost Finished 😃';
 
   return (
