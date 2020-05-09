@@ -3,6 +3,7 @@ import Navbar from './assets/scripts/components/Navbar';
 import ProgressBar from './assets/scripts/components/ProgressBar';
 import QuizForm from './assets/scripts/components/QuizForm';
 import { QuizProvider } from './assets/scripts/context/QuizContext';
+import { QuizProgressProvider } from './assets/scripts/context/QuizProgressContext';
 import { ThanksProvider } from './assets/scripts/context/ThanksContext';
 import adidas from './images/Quiz/adidas.png';
 import amazon from './images/Quiz/amazon.png';
@@ -27,7 +28,7 @@ import windows from './images/Quiz/windows.png';
 
 import './App.css';
 
-//when adding questions, edits have to be done in ProgressBar.js
+//when adding questions, edits have to be done in ProgressProgressContext.js
 const questions = [
   {
     title: 'Which brand do you like?',
@@ -126,16 +127,22 @@ function App() {
   return (
     <ThanksProvider>
       <QuizProvider>
-        <div className='App'>
-          <Navbar />
-          <ProgressBar nrOfQuizes={questions.length} questions={questions} />
-          <h2 className='welcome-title'>Thanks for working with us</h2>
-          <p className='welcome-desc'>
-            Please fill out the quiz so we know how to desing your website or
-            grahics
-          </p>
-          <QuizForm questions={questions} key={questions._id} />
-        </div>
+        <QuizProgressProvider questions={questions}>
+          <div className='App'>
+            <Navbar />
+            <ProgressBar nrOfQuizes={questions.length} questions={questions} />
+            <h2 className='welcome-title'>Thanks for working with us</h2>
+            <p className='welcome-desc'>
+              Please fill out the quiz so we know how to desing your website or
+              grahics
+            </p>
+            <QuizForm
+              questions={questions}
+              key={questions._id}
+              nrOfQuizes={questions.length}
+            />
+          </div>
+        </QuizProgressProvider>
       </QuizProvider>
     </ThanksProvider>
   );
@@ -144,7 +151,6 @@ function App() {
 export default App;
 
 // v.1.0.1 works
-// thanks style mobile also
 // total questions answered form appear?
 
 //NICE TO HAVE

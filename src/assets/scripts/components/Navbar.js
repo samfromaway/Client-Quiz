@@ -6,7 +6,6 @@ const Navbar = () => {
     <nav className='nav'>
       <div className='logo'>
         <a href='index'>
-          {' '}
           <img className='logo-image' alt='Logo' src={logo} />
         </a>
         <p className='logo-desc'>Dev World</p>

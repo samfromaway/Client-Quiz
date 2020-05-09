@@ -2,6 +2,7 @@ import React, { useState, useContext, Fragment } from 'react';
 import QuizQuestion from './QuizQuestion';
 import Thanks from './Thanks';
 import { QuizContext } from '../context/QuizContext';
+import { QuizProgressContext } from '../context/QuizProgressContext';
 import { ThanksContext } from '../context/ThanksContext';
 
 const encode = (data) => {
@@ -10,9 +11,11 @@ const encode = (data) => {
     .join('&');
 };
 
-const ContactForm = ({ questions }) => {
+const ContactForm = ({ questions, nrOfQuizes }) => {
   const [quizSummary] = useContext(QuizContext);
   const [thanksBox, setThanksBoxState] = useContext(ThanksContext);
+  const [quizProgress, setQuizProgress] = useContext(QuizProgressContext);
+
   const [name, setName] = useState({ name: '' });
   const [email, setEmail] = useState({ email: '' });
   const [message, setMessage] = useState({ message: '' });
@@ -48,6 +51,17 @@ const ContactForm = ({ questions }) => {
     setMessage({ message: '' });
   };
 
+  const questionsToGo = nrOfQuizes - quizProgress;
+
+  const wrapContactStyle =
+    questionsToGo !== 0 ? 'wrap-contact wrap-contact-block' : 'wrap-contact';
+
+  const fillOutMessage =
+    nrOfQuizes - quizProgress !== 0
+      ? `Please fill out all the questions.
+      You have  ${questionsToGo} to go 🤔`
+      : 'Almost Finished 😃';
+
   return (
     <Fragment>
       <Thanks />
@@ -70,8 +84,9 @@ const ContactForm = ({ questions }) => {
             desc4={questions.options.desc4}
           />
         ))}
-        <div className='wrap-contact'>
+        <div className={wrapContactStyle}>
           <h2 className='contact-form-title'>Last Step</h2>
+          <p className='contact-form-title'>{fillOutMessage}</p>
           <div className='wrap-input'>
             <input
               className='input'
