@@ -28,7 +28,7 @@ import windows from './images/Quiz/windows.png';
 
 import './App.css';
 
-//when adding questions, edits have to be done in ProgressProgressContext.js
+//when adding questions, edits have to be done in QuizProgressContext.js
 const questions = [
   {
     title: 'Which brand do you like?',

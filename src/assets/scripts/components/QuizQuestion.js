@@ -35,14 +35,12 @@ const QuizQuestion = ({
 
     if (isAlreadyAnswered) {
       setQuizSummary(quizSummary.filter((answer) => answer.id !== id));
-    }
-    //in the template expression ${checked} is only there to see if there is a mistake can be deleted in prod.
-    else
+    } else
       setQuizSummary((prevAnswers) => [
         ...prevAnswers,
         {
           id: id,
-          answer: `${name} -> Answer: ${value} Status: ${checked} || `,
+          answer: `${title} -> Answer: ${value} || `,
           title: title,
         },
       ]);
