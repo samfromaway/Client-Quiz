@@ -4,6 +4,7 @@ import Thanks from './Thanks';
 import { QuizContext } from '../context/QuizContext';
 import { QuizProgressContext } from '../context/QuizProgressContext';
 import { ThanksContext } from '../context/ThanksContext';
+import PropTypes from 'prop-types';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -132,3 +133,8 @@ const ContactForm = ({ questions, nrOfQuizes }) => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  questions: PropTypes.array,
+  nrOfQuizes: PropTypes.number,
+};

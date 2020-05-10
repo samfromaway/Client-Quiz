@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../context/QuizContext';
+import PropTypes from 'prop-types';
 
 const QuizQuestion = ({
   title,
@@ -113,3 +114,20 @@ const QuizQuestion = ({
 };
 
 export default QuizQuestion;
+
+QuizQuestion.propTypes = {
+  title: PropTypes.string,
+  img1: PropTypes.string,
+  img2: PropTypes.string,
+  img3: PropTypes.string,
+  img4: PropTypes.string,
+  desc1: PropTypes.string,
+  desc2: PropTypes.string,
+  desc3: PropTypes.string,
+  desc4: PropTypes.string,
+  id1: PropTypes.string,
+  id2: PropTypes.string,
+  id3: PropTypes.string,
+  id4: PropTypes.string,
+  id: PropTypes.string,
+};
