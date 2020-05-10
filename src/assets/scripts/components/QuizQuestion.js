@@ -12,11 +12,15 @@ const QuizQuestion = ({
   desc2,
   desc3,
   desc4,
+  desc1IsChecked,
+  desc2IsChecked,
+  desc3IsChecked,
+  desc4IsChecked,
   id1,
   id2,
   id3,
   id4,
-  id,
+  mainId,
 }) => {
   const [quizSummary, setQuizSummary] = useContext(QuizContext);
 
@@ -25,25 +29,22 @@ const QuizQuestion = ({
     const checked = e.target.checked;
     const id = e.target.id;
     const value = e.target.value;
-    updateQuizSummary(id, name, value, checked);
+    updateQuizSummary(id, value, checked);
   };
 
-  const updateQuizSummary = (id, name, value, checked) => {
-    const isAlreadyAnswered = quizSummary.some((answer) => {
-      return answer.id === id;
-    });
-
-    if (isAlreadyAnswered) {
-      setQuizSummary(quizSummary.filter((answer) => answer.id !== id));
-    } else
-      setQuizSummary((prevAnswers) => [
-        ...prevAnswers,
-        {
-          id: id,
-          answer: `${title} -> Answer: ${value} || `,
-          title: title,
+  const updateQuizSummary = (id, value, checked) => {
+    console.log(quizSummary);
+    setQuizSummary(quizSummary.filter((answer) => answer.title !== mainId));
+    setQuizSummary((prevAnswers) => [
+      ...prevAnswers,
+      {
+        title: title,
+        _id: mainId,
+        options: {
+          img1: 'h',
         },
-      ]);
+      },
+    ]);
   };
 
   return (
@@ -123,6 +124,10 @@ QuizQuestion.propTypes = {
   desc2: PropTypes.string,
   desc3: PropTypes.string,
   desc4: PropTypes.string,
+  desc1IsChecked: PropTypes.bool,
+  desc2IsChecked: PropTypes.bool,
+  desc3IsChecked: PropTypes.bool,
+  desc4IsChecked: PropTypes.bool,
   id1: PropTypes.string,
   id2: PropTypes.string,
   id3: PropTypes.string,

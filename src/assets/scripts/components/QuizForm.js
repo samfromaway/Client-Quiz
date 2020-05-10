@@ -69,6 +69,7 @@ const ContactForm = ({ questions, nrOfQuizes }) => {
         {questions.map((questions) => (
           <QuizQuestion
             key={questions._id}
+            mainId={questions._id}
             id1={questions.options.id1}
             id2={questions.options.id2}
             id3={questions.options.id3}
