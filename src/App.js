@@ -150,11 +150,9 @@ function App() {
 
 export default App;
 
-// v.1.0.1 works
-// total questions answered form appear?
+// v.0.1.0 works
 
 //NICE TO HAVE
 // step one of four progess bar
 // answer sort
 // see results
-// local storage
