@@ -153,6 +153,5 @@ export default App;
 // v.0.1.1 works
 
 //NICE TO HAVE
-// step one of four progess bar
 // answer sort
 // see results

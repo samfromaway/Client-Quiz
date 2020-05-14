@@ -60,8 +60,7 @@ const ContactForm = ({ questions, nrOfQuizes }) => {
   const fillOutMessage = () => {
     if (nrOfQuizes - quizProgress < 1) {
       return 'Almost Finished 😃';
-    }
-    if (nrOfQuizes - quizProgress === 1) {
+    } else if (nrOfQuizes - quizProgress === 1) {
       return `You have 1 Question to go 🤔`;
     } else {
       return `You have  ${questionsToGo} Questions to go 🤔`;
