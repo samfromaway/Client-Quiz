@@ -57,10 +57,16 @@ const ContactForm = ({ questions, nrOfQuizes }) => {
   const wrapContactStyle =
     questionsToGo !== 0 ? 'wrap-contact wrap-contact-block' : 'wrap-contact';
 
-  const fillOutMessage =
-    nrOfQuizes - quizProgress !== 0
-      ? ` You have  ${questionsToGo} Questions to go 🤔`
-      : 'Almost Finished 😃';
+  const fillOutMessage = () => {
+    if (nrOfQuizes - quizProgress < 1) {
+      return 'Almost Finished 😃';
+    }
+    if (nrOfQuizes - quizProgress === 1) {
+      return `You have 1 Question to go 🤔`;
+    } else {
+      return `You have  ${questionsToGo} Questions to go 🤔`;
+    }
+  };
 
   return (
     <Fragment>
@@ -86,7 +92,7 @@ const ContactForm = ({ questions, nrOfQuizes }) => {
         ))}
         <div className={wrapContactStyle}>
           <h2 className='contact-form-title'>Last Step</h2>
-          <p className='contact-form-title'>{fillOutMessage}</p>
+          <p className='contact-form-title'>{fillOutMessage()}</p>
           <div className='wrap-input'>
             <input
               className='input'
