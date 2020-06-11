@@ -15,7 +15,7 @@ const Navbar = () => {
 
       <a
         target='_blank'
-        href='http://dev-world.info/'
+        href='http://dev-world.agency/'
         rel='noopener noreferrer'
         className='nav-link'
       >

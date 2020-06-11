@@ -133,8 +133,8 @@ function App() {
             <ProgressBar nrOfQuizes={questions.length} questions={questions} />
             <h2 className='welcome-title'>Thanks for working with us</h2>
             <p className='welcome-desc'>
-              Please fill out the quiz so we know how to desing your website or
-              grahics
+              Please fill out the quiz. This helps us understand your
+              preferences.
             </p>
             <QuizForm
               questions={questions}
